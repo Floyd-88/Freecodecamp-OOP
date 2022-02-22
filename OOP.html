@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OOP</title>
+</head>
+<body>
+
+
+
+	<script>
+/*Используя dogобъект, дайте ему метод с именем sayLegs. Метод должен возвращать предложениеThis dog has 4 legs.*/
+/*		let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs: function() {return "This dog has " + dog.numLegs + " legs.";}
+};
+console.log(dog.sayLegs());*/
+
+
+/*Измените dog.sayLegsметод, чтобы удалить любые ссылки на файлы dog. Используйте duckпример для руководства.*/
+/*let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
+};
+dog.sayLegs();*/
+
+
+/*Создайте конструктор , Dog со свойствами name, colorи numLegs, для которых заданы строка, строка и число соответственно.*/
+/*function Dog() {
+  this.name = "Bobik";
+  this.color = "Black";
+  this.numLegs = 4
+}*/
+
+
+/*Используйте Dogконструктор из прошлого урока, чтобы создать новый экземпляр Dog, назначив его переменной hound.*/
+/*function Dog() {
+  this.name = "Bobik";
+  this.color = "Black";
+  this.numLegs = 4
+}
+let hound = new Dog();*/
+
+
+
+
+/*Создайте еще один Dogконструктор. На этот раз настройте его так, чтобы он принимал параметры nameи colorи зафиксируйте свойство numLegsравным 4. Затем создайте новое Dogсохраненное значение в переменной terrier. Передайте ему две строки в качестве аргументов для свойств nameи .color*/
+/*function Dog(name, color) {
+this.name = name;
+this.color = color;
+this.numLegs = 4;
+}
+let terrier = new Dog("bob", "black");
+console.log(terrier.name);
+console.log(terrier)*/
+
+
+
+/*Создайте новый экземпляр Houseконструктора, вызвав его myHouseи передав количество спален. Затем используйте instanceofдля проверки того, что это экземпляр House.*/
+/*function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+let myHouse = new House(2);
+myHouse instanceof House;
+*/
+
+
+
+/*Добавьте собственные свойства canaryв массив ownProps.*/
+/*function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+let canary = new Bird("Tweety");
+let ownProps = [];
+// Only change code below this line
+for(let key in canary) {
+  if(canary.hasOwnProperty(key)){
+    ownProps.push(key)
+  }
+}
+console.log(ownProps)*/
+
+
+
+
+/*Добавить numLegs свойство в prototypeсписокDog*/
+// function Dog(name) {
+//   this.name = name;
+// }
+// Dog.prototype.numLegs = 4
+// // Only change code above this line
+// let beagle = new Dog("Snoopy");
+
+// console.log(beagle)
+
+/*function Bird(name) {
+  this.name = name;  //own property
+}
+Bird.prototype.numLegs = 2; // prototype property
+let duck = new Bird("Donald");
+console.log(duck)*/
+
+
+/*Добавьте все собственные свойства beagleв массив ownProps. Добавьте все prototypeсвойства Dogв массив prototypeProps.*/
+// function Dog(name) {
+//   this.name = name;
+// }
+// Dog.prototype.numLegs = 4;
+
+// let beagle = new Dog("Snoopy");
+
+// let ownProps = [];
+// let prototypeProps = [];
+
+// for(let key in beagle) {
+// 	if(beagle.hasOwnProperty(key)) {
+// 		ownProps.push(key)
+// 	} else{
+// 		prototypeProps.push(key)
+// 	}
+// }
+// console.log(ownProps);
+// console.log(prototypeProps)
+
+
+
+/*Напишите joinDogFraternityфункцию, которая принимает candidateпараметр и, используя это constructorсвойство, возвращает значение, trueесли кандидат является Dog, иначе возвращает значение false.*/
+/*function Dog(name) {
+  this.name = name;
+}
+// Only change code below this line
+let beegle = new Dog("bob")
+
+function joinDogFraternity(candidate) {
+if(candidate.constructor === Dog) {
+	return true
+} else {return false}
+}
+console.log(joinDogFraternity(beegle))*/
+
+
+
+
+//Создаем функцию-конструктор:
+/*function Bird(name, type) {
+this.name = name;
+this.type = type;
+}
+console.log(Bird(1, 2)) //Функция конструктор ничего не возвращает (результат будет undefined);
+
+let falcon = new Bird("Tik", "flies"); //Создали объект на основе функции-конструктораж
+console.log(falcon)
+console.log(falcon.constructor) // constructor это свойтсво объекта значением которого является функция сщздавшая этот объект;
+falcon.legs = 4
+
+let obj = {
+	Firstname: "Ilia"
+} // Создаем пустой объект;
+
+obj.__proto__ = falcon;
+
+console.log(obj)
+console.log(obj.constructor)*/
+
+
+
+
+/*Добавьте свойство numLegsи два метода eat()и describe()к объекту prototypeof Dog, задав prototypeновый объект.*/
+/*function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  numLegs: 4,
+  eat: () => "meet",
+  describe: function() {return "My name is " + this.name},
+};
+
+let pudel = new Dog("Li");
+console.log(pudel)*/
+
+
+</script>
+</body>
+</html>
