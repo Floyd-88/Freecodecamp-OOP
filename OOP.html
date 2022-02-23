@@ -173,15 +173,261 @@ console.log(obj.constructor)*/
 /*function Dog(name) {
   this.name = name;
 }
-
 Dog.prototype = {
   numLegs: 4,
   eat: () => "meet",
   describe: function() {return "My name is " + this.name},
 };
-
 let pudel = new Dog("Li");
 console.log(pudel)*/
+
+
+
+/*Определите constructorсвойство в Dog prototype.*/
+
+/*function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+let Kolli = new Dog("Stik");
+console.log(Kolli)*/
+
+
+/*Используйте для isPrototypeOfпроверки prototype.beagle*/
+/*function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+console.log(Dog.prototype.isPrototypeOf(beagle));
+// Only change code below this line*/
+/*function Bird(name) {
+  this.name = name;
+}
+let falcon = new Bird("Fil");
+console.log(hasOwnProperty(name));
+*/
+
+/*Метод eatповторяется в обоих Catи Bear. Отредактируйте код в духе DRY, переместив eatметод в файл Animal supertype.*/
+/*function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+console.log(new Cat("Kiti"))
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+console.log(new Bear("Rod"))
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+ eat: function() {
+    console.log("nom nom nom");
+  }  
+
+};*/
+
+
+
+
+/*Используйте Object.createдля создания двух экземпляров Animalnamed duckи beagle.*/
+/*function Animal() { }
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    return "nom nom nom";
+  }
+};
+let duck = Object.create(Animal.prototype);
+console.log(duck.eat());
+let beagle = Object.create(Animal.prototype);
+console.log(beagle);
+
+/*let duck = new Animal(); //Обычный способ создания объекта через new
+console.log(duck);*/
+
+
+
+/*Измените код, чтобы экземпляры Dog наследовались от Animal.*/
+
+/*function Animal() {};
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom")
+  }
+}
+
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = Object.create(Animal.prototype);
+let Kolli = new Dog("Kolli")
+Kolli.eat();*/
+
+
+
+/*Исправьте код так duck.constructorи beagle.constructorверните соответствующие конструкторы.*/
+
+/*function Animal() { }
+function Bird() { }
+function Dog() {
+ }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+let duck = new Bird();
+Bird.prototype.constructor = Bird;
+console.log(duck)
+let beagle = new Dog();
+Dog.prototype.constructor = Dog;
+console.log(beagle)*/
+
+
+/*Add all necessary code so the Dog object inherits from Animal and the Dog's prototype constructor is set to Dog. Then add a bark() method to the Dog object so that beagle can both eat() and bark(). The bark() method should print Woof! to the console.*/
+
+/*function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  console.log("Woof!")
+}
+
+let beagle = new Dog();
+console.log(beagle.bark())*/
+
+
+/*Переопределите fly()метод for Penguin, чтобы он возвращал строкуAlas, this is a flightless bird.*/
+
+/*function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+
+Penguin.prototype.fly = function() {return "Alas, this is a flightless bird."}
+
+// Only change code above this line
+
+let penguin = new Penguin();
+
+console.log(Penguin.prototype.fly);
+console.log(Bird.prototype.fly);*/
+
+
+
+/*Создайте миксин с именем glideMixin, который определяет метод с именем glide. Затем используйте, glideMixinчтобы дать обоим birdи boatспособность скользить.*/
+
+/*let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log("glide!")
+  } 
+}
+glideMixin(bird)
+glideMixin(boat)
+
+boat.glide()*/
+
+
+
+/*Измените способ weightобъявления Birdфункции, чтобы она была закрытой переменной. Затем создайте метод getWeight, возвращающий значение weight15.*/
+
+/*function Bird() {
+  let weight = 15;
+  this.getWeight = function() {
+    return weight
+  }
+
+}
+console.log(Bird);
+let duck = new Bird()
+console.log(duck.getWeight())*/
+
+
+/*Перепишите функцию makeNestи удалите ее вызов, чтобы вместо этого она представляла собой анонимное немедленно вызываемое функциональное выражение (IIFE).*/
+
+/*(function() {
+  console.log("A cozy nest is ready");
+})()*/
+
+
+
+/*Создайте модуль с именем funModule, чтобы обернуть два миксина isCuteMixinи singMixin. funModule должен вернуть объект.*/
+
+/*function Puppy() {}
+function Bird() {}
+
+let funModule = (function() {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      };
+    },
+  }
+}
+)()
+
+let bobik = new Puppy();
+let switti = new Bird();
+
+funModule.isCuteMixin(bobik);
+funModule.singMixin(switti);
+
+console.log(bobik);
+switti.sing()*/
 
 
 </script>
