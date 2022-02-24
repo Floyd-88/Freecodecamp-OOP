@@ -430,6 +430,146 @@ console.log(bobik);
 switti.sing()*/
 
 
+
+/*function Rabbit(name) {
+  this.name = name;
+  constructor: Rabbit;
+}
+
+Rabbit.prototype = {
+}
+
+
+let rabbit = new Rabbit("White Rabbit");
+Rabbit.color = "White"
+console.log(rabbit)
+let rabbit_2 = new rabbit.constructor(2)
+console.log(rabbit_2)*/
+
+/*if (!String.prototype.repeat) { // Если такого метода нет
+  // добавляем его в прототип
+
+  String.prototype.repeat = function(n) {
+    // повторить строку n раз
+
+    // на самом деле код должен быть немного более сложным
+    // (полный алгоритм можно найти в спецификации)
+    // но даже неполный полифил зачастую достаточно хорош для использования
+    return new Array(n + 1).join(this);
+  };
+}
+*/
+/*let animal = {
+  eats: "vegan",
+}
+
+let rabbit = Object.create(animal, {color: {value: "white"}})
+
+let clone = Object.create(Object.getPrototypeOf(rabbit), Object.getOwnPropertyDescriptors(rabbit));
+
+console.log(clone)
+*/
+
+
+
+
+
+/*class Button {
+  constructor(width, height, background, value) {
+    this.width = width + "px";
+    this.height = height  + "px";
+    this.background = background;
+    this.value = value;
+  }
+  render() {
+    let button =  document.createElement( "button" );
+    button.value = this.value;
+    button.style.width = this.width;
+    button.style.height = this.height;
+    button.style.background = this.background;
+    button.innerHTML = this.value;
+    button.style.borderRadius = this.borderRadius + "px";
+    document.body.appendChild( button )
+  }
+}
+
+let button_1 = new Button(100, 40, "red", "btn")
+button_1.render()
+
+class ModernButton extends Button {
+  constructor(width, height, background, value, borderRadius) {
+    super(width, height, background, value);
+    this.borderRadius = borderRadius;
+  }
+
+render(){
+ super.render()
+}
+ 
+}
+let button_2 = new ModernButton(100, 40, "green", "btn_2", 50)
+button_2.render()*/
+
+
+
+
+
+
+/*class User {
+  constructor(name) {
+    this.name = name
+  }
+
+  sayHy() {
+    return `Hello ${this.name}`
+  }
+}
+
+class Student extends User {
+  constructor(name, level) {
+    super(name);
+    this.level = level;
+  }
+  sayHy() {
+   return (this.name.length > 10) ? `Имя ${this.name} слишком большое` : super.sayHy();
+    
+  }
+}
+let person = new User("Ilia");
+console.log(person.sayHy())
+
+let student = new Student("Alexxxxxxxx", 4)
+console.log(student.sayHy());*/
+
+
+
+ 
+/*class User {
+  constructor() {
+    //this.name = name
+  }
+ set nameClass(name) {
+   this._name = name.trim().toLowerCase();
+  }
+
+  #test = "XXX"
+
+  get nameClass() {
+    return this._name
+  }
+  user_privat() {
+     return this.#test
+  }
+}
+let student = new User()
+student.nameClass ="   AlEx";
+console.log(student.nameClass)
+console.log(student.user_privat())
+
+class User2 extends User {}
+let student2 = new User2();
+console.log(student2.user_privat())*/
+
 </script>
 </body>
 </html>
